@@ -13,6 +13,9 @@ gem 'coffee-rails', '4.2.1'
 gem 'jquery-rails', '4.1.1'
 gem 'turbolinks', '5.0.1'
 gem 'jbuilder', '2.4.1'
+gem 'carrierwave', '0.11.2'
+gem 'mini_magick', '4.5.1'
+gem 'fog', '1.38.0'
 
 group :development, :test do
   gem 'byebug','9.0.0', platform: :mri

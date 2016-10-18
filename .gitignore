@@ -25,3 +25,5 @@
 
 # Ignore swp
 *.swp
+
+/pulic/uploads
