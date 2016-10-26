@@ -97,7 +97,7 @@ Rails.application.configure do
 		#:enable_starttls_auto => true
 		:address => 'smtp.qq.com',
 		:domain => 'qq.com',
-		:port => '587',
+		:port => 465,
 		:authentication => :plain,
 		:user_name =>'wuhlcom@qq.com',
 		:password => 'zjxnzfigishzbhba',
