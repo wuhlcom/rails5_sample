@@ -28,9 +28,12 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :test
-  host = "192.168.10.246:3000"
-  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+
+#  config.action_mailer.delivery_method = :test
+ host = "192.168.10.91:3000"
+ port = "3000"
+ #config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  config.action_mailer.default_url_options = { host: host, port: port }
 
   config.action_mailer.perform_caching = false
 
@@ -53,5 +56,23 @@ Rails.application.configure do
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
+
+#  config.action_mailer.delivery_method = :sendmail
+#  config.action_mailer.perform_deliveries = true
+#  config.action_mailer.default_options = {from:'wuhlcom@qq.comi'}
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.qq.com",
+    :domain		  => 'qq.com',
+    :port                 => 25,
+    :user_name            => 'wuhlcom@qq.com',
+    :password             => 'zjxnzfigishzbhba',
+    :authentication       => 'plain',
+    #:authentication       => :login,
+    :enable_starttls_auto => true,
+    :openssl_verify_mode  => 'none'
+  }
+
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker 
 end
